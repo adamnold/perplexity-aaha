@@ -1,0 +1,15 @@
+Perplexity (AAHA)
+Copyright 2026 Adam And His Agents (AAHA)
+
+Licensed under the Apache License, Version 2.0.
+
+This is an unofficial third-party Electron wrapper for the Perplexity web
+app (https://www.perplexity.ai). It is not endorsed by or affiliated with
+Perplexity AI, Inc. "Perplexity" and the Perplexity logo are trademarks of
+Perplexity AI, Inc.
+
+This project bundles no Perplexity code or assets other than the icon in
+icons/icon.png, which is a rendering of Perplexity's own publicly served
+favicon. It only loads the Perplexity web app in an Electron window at
+runtime. Your use of Perplexity remains subject to Perplexity's own Terms
+of Service.

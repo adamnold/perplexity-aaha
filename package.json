@@ -1,0 +1,42 @@
+{
+  "name": "perplexity",
+  "productName": "Perplexity",
+  "version": "1.0.0",
+  "description": "Perplexity desktop app (Electron wrapper) by Adam And His Agents",
+  "main": "src/main.js",
+  "author": "Adam And His Agents (AAHA)",
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --linux"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.adamandhisagents.perplexity",
+    "productName": "Perplexity",
+    "asar": true,
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "linux": {
+      "target": [
+        "dir",
+        "AppImage"
+      ],
+      "category": "Network",
+      "icon": "icons",
+      "executableName": "perplexity",
+      "artifactName": "perplexity-aaha-${version}-${arch}.AppImage",
+      "desktop": {
+        "Name": "Perplexity",
+        "Comment": "AI-powered answer engine",
+        "Categories": "Network;",
+        "StartupWMClass": "Perplexity"
+      }
+    }
+  }
+}
