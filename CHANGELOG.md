@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Corrected the privacy document after a clean-profile hostname audit showed that Perplexity loads Google sign-in and several third-party service resources during initial startup.
+
 ## v1.1.0 — 2026-07-11
 
 - Updated from Electron 31 to exact Electron 43.1.0 and electron-builder 26.15.3.
