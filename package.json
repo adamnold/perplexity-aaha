@@ -1,42 +1,38 @@
 {
-  "name": "perplexity",
+  "name": "perplexity-aaha",
   "productName": "Perplexity",
-  "version": "1.0.0",
-  "description": "Perplexity desktop app (Electron wrapper) by Adam And His Agents",
+  "desktopName": "com.adamandhisagents.perplexity",
+  "version": "1.1.0",
+  "description": "Unofficial Perplexity desktop application for Linux by Adam And His Agents",
   "main": "src/main.js",
   "author": "Adam And His Agents (AAHA)",
   "license": "Apache-2.0",
   "scripts": {
     "start": "electron .",
+    "check": "node --check src/main.js && node --check src/policy.js && node --check app.config.js && node scripts/validate-config.js",
+    "test": "node --test",
+    "icons": "bash scripts/generate-icons.sh",
     "dist": "electron-builder --linux"
   },
-  "devDependencies": {
-    "electron": "^31.0.0",
-    "electron-builder": "^24.13.3"
-  },
+  "devDependencies": { "electron": "43.1.0", "electron-builder": "26.15.3" },
   "build": {
     "appId": "com.adamandhisagents.perplexity",
     "productName": "Perplexity",
     "asar": true,
-    "files": [
-      "src/**/*",
-      "package.json"
-    ],
+    "files": ["src/**/*", "app.config.js", "build/icons/**/*", "package.json"],
     "linux": {
-      "target": [
-        "dir",
-        "AppImage"
-      ],
+      "target": ["dir", "AppImage"],
       "category": "Network",
-      "icon": "icons",
-      "executableName": "perplexity",
-      "artifactName": "perplexity-aaha-${version}-${arch}.AppImage",
-      "desktop": {
-        "Name": "Perplexity",
-        "Comment": "AI-powered answer engine",
-        "Categories": "Network;",
-        "StartupWMClass": "Perplexity"
-      }
+      "icon": "build/icons",
+      "executableName": "perplexity-aaha",
+      "artifactName": "perplexity-aaha-v${version}-${arch}.AppImage",
+      "syncDesktopName": true,
+      "desktop": { "entry": {
+        "Name": "Perplexity", "Comment": "Perplexity AI answer engine",
+        "Categories": "Network;", "Keywords": "ai;search;research;perplexity;",
+        "StartupWMClass": "com.adamandhisagents.perplexity",
+        "Terminal": false, "Type": "Application"
+      }}
     }
   }
 }

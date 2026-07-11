@@ -1,40 +1,16 @@
-// ============================================================
-//  APP CONFIG  —  This is the ONLY file you edit per app.
-//  Change these values, swap the icon in icons/, rebuild.
-// ============================================================
+"use strict";
 module.exports = {
-  // The web app you want to wrap:
+  schemaVersion: 2, configured: true,
+  repoName: "perplexity-aaha", productName: "Perplexity",
+  appId: "com.adamandhisagents.perplexity", executable: "perplexity-aaha",
+  iconName: "perplexity-aaha", profileName: "Perplexity",
+  legacyProfileNames: [], compatibilityDesktopIds: ["perplexity"],
   url: "https://www.perplexity.ai",
-
-  // Display name (shows in title bar, launcher, panel tooltip):
-  name: "Perplexity",
-
-  // Wayland/X11 window identity. MUST match productName in package.json
-  // and StartupWMClass in the .desktop file so KDE keeps your icon.
-  wmClass: "Perplexity",
-
-  // Reverse-DNS app id — unique per app.
-  appId: "com.adamandhisagents.perplexity",
-
-  // Initial window size:
-  width: 1280,
-  height: 800,
-
-  // Open external links (e.g. links that leave the app's domain)
-  // in your real browser instead of inside the app window:
-  openExternalInBrowser: true,
-
-  // Restrict in-app navigation to these host suffixes. Anything else
-  // opens in the external browser. Perplexity uses both perplexity.ai
-  // and pplx.ai (short-links), so both are kept in-app.
-  allowedHosts: ["perplexity.ai", "pplx.ai"],
-
-  // Optional custom user-agent. Leave null for Electron's default.
-  userAgent: null,
-
-  // PRIVACY HARDENING (default: ON). Disables Chromium's background
-  // networking, domain-reliability beacons, component updates, network-time
-  // queries, translate, optimization hints, and crash metrics, so the app
-  // only talks to Perplexity. Set to true only if something breaks.
-  disableHardening: false
+  trustedNavigationHosts: ["perplexity.ai", "pplx.ai"],
+  trustedAuthHosts: ["accounts.google.com", "appleid.apple.com"],
+  permissions: { "clipboard-sanitized-write": ["perplexity.ai"] },
+  blockedHosts: ["clients2.google.com", "clients4.google.com", "update.googleapis.com", "safebrowsing.googleapis.com", "optimizationguide-pa.googleapis.com", "redirector.gvt1.com", "google-analytics.com", "www.google-analytics.com", "stats.g.doubleclick.net"],
+  externalProtocols: ["http:", "https:", "mailto:"], openExternalLinks: true,
+  width: 1360, height: 860, category: "Network;",
+  comment: "Perplexity AI answer engine", keywords: "ai;search;research;perplexity;"
 };
