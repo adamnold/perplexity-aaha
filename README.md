@@ -8,7 +8,13 @@ This app uses Electron, which is Chromium-based. It disables unnecessary Chromiu
 
 ## Install from source
 
-Run chmod +x on the shell scripts, then ./build.sh and ./install.sh. The app installs under ~/MyApps/perplexity-aaha/app. Normal uninstall preserves ~/.config/Perplexity; ./uninstall.sh --purge removes that local profile.
+Run `./build.sh` and then `./install.sh`. Direct AppImage execution works from
+any location and creates no install directory. The optional installer defaults
+to `~/.local/opt/aaha/perplexity-aaha`; use
+`./install.sh --install-root /absolute/path/perplexity-aaha` to choose another
+per-application location. Normal uninstall preserves `~/.config/Perplexity`;
+`./uninstall.sh --purge` removes that local profile after receipt and marker
+validation.
 
 AAHA_NETWORK_AUDIT=1 prints first-seen hostnames. External citations open in the system browser. File upload, drag-and-drop, and downloads remain available.
 

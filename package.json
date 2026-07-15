@@ -2,7 +2,7 @@
   "name": "perplexity-aaha",
   "productName": "Perplexity",
   "desktopName": "com.adamandhisagents.perplexity",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Unofficial Perplexity desktop application for Linux by Adam And His Agents",
   "main": "src/main.js",
   "author": "Adam And His Agents (AAHA)",
@@ -14,25 +14,41 @@
     "icons": "bash scripts/generate-icons.sh",
     "dist": "electron-builder --linux"
   },
-  "devDependencies": { "electron": "43.1.0", "electron-builder": "26.15.3" },
+  "devDependencies": {
+    "electron": "43.1.0",
+    "electron-builder": "26.15.3"
+  },
   "build": {
     "appId": "com.adamandhisagents.perplexity",
     "productName": "Perplexity",
     "asar": true,
-    "files": ["src/**/*", "app.config.js", "build/icons/**/*", "package.json"],
+    "files": [
+      "src/**/*",
+      "app.config.js",
+      "build/icons/**/*",
+      "package.json"
+    ],
     "linux": {
-      "target": ["dir", "AppImage"],
+      "target": [
+        "dir",
+        "AppImage"
+      ],
       "category": "Network",
       "icon": "build/icons",
       "executableName": "perplexity-aaha",
       "artifactName": "perplexity-aaha-v${version}-${arch}.AppImage",
       "syncDesktopName": true,
-      "desktop": { "entry": {
-        "Name": "Perplexity", "Comment": "Perplexity AI answer engine",
-        "Categories": "Network;", "Keywords": "ai;search;research;perplexity;",
-        "StartupWMClass": "com.adamandhisagents.perplexity",
-        "Terminal": false, "Type": "Application"
-      }}
+      "desktop": {
+        "entry": {
+          "Name": "Perplexity",
+          "Comment": "Perplexity AI answer engine",
+          "Categories": "Network;",
+          "Keywords": "ai;search;research;perplexity;",
+          "StartupWMClass": "com.adamandhisagents.perplexity",
+          "Terminal": false,
+          "Type": "Application"
+        }
+      }
     }
   }
 }
