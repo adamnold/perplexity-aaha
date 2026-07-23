@@ -9,7 +9,7 @@ Perplexity AI, Inc. "Perplexity" and the Perplexity logo are trademarks of
 Perplexity AI, Inc.
 
 This project bundles no Perplexity code or assets other than the icon in
-icons/icon.png, which is a rendering of Perplexity's own publicly served
+assets/icon-source.png, which is a rendering of Perplexity's own publicly served
 favicon. It only loads the Perplexity web app in an Electron window at
 runtime. Your use of Perplexity remains subject to Perplexity's own Terms
 of Service.

@@ -1,5 +1,7 @@
 # Privacy and Network Behavior
 
+Last Updated: 2026-07-23
+
 The wrapper adds no AAHA analytics. It disables Chromium component updates, background networking, domain-reliability reporting, Breakpad, Translate, Optimization Hints, Media Router, and Secure DNS; known Google update/telemetry hosts are blocked.
 
 Perplexity must still contact perplexity.ai, CDNs, model/search infrastructure, authentication providers, connectors, and linked sources. A clean-profile audit on 2026-07-11 showed that the Perplexity page loads accounts.google.com during initial startup, before the user selects a sign-in method. It also contacted Cloudflare Insights, Datadog, Singular, and Eppo hosts controlled by Perplexity's web application. Apple traffic may occur when Apple sign-in is selected. The wrapper does not control these service-level design choices, and blocking identity-provider resources would break the promised Google sign-in path.
