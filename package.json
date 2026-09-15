@@ -2,7 +2,7 @@
   "name": "perplexity-aaha",
   "productName": "Perplexity",
   "desktopName": "com.adamandhisagents.perplexity",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Unofficial Perplexity desktop application for Linux by Adam And His Agents",
   "main": "src/main.js",
   "author": "Adam And His Agents (AAHA)",
@@ -15,7 +15,7 @@
     "dist": "electron-builder --linux --publish never"
   },
   "devDependencies": {
-    "electron": "43.1.0",
+    "electron": "44.3.0",
     "electron-builder": "26.15.3"
   },
   "build": {
