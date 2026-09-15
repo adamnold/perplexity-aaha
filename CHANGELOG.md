@@ -1,6 +1,10 @@
 # Changelog
 
-Last Updated: 2026-07-23
+Last Updated: 2026-09-15
+
+## v1.3.0 — 2026-09-15
+
+- Updated from exact Electron 43.1.0 to exact Electron 44.3.0.
 
 ## v1.2.0 — 2026-07-23
 
