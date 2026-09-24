@@ -2,6 +2,12 @@
 
 Last Updated: 2026-09-24
 
+## Unreleased — 2026-09-24
+
+- Added a manual-only Release workflow that builds the AppImage from the
+  draft release's target commit, attaches it with `SHA256SUMS`, and publishes
+  the draft. CI validation builds remain non-publishing.
+
 ## v1.3.0 — 2026-09-24
 
 - Updated from exact Electron 43.1.0 to exact Electron 44.4.5 (Chromium
