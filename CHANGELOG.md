@@ -2,6 +2,12 @@
 
 Last Updated: 2026-09-24
 
+## Unreleased — 2026-09-24
+
+- Added a manual-only Release workflow that builds the AppImage from the
+  draft release's target commit, attaches it with `SHA256SUMS`, and publishes
+  the draft. CI validation builds remain non-publishing.
+
 ## v1.3.0 — 2026-09-24
 
 - Updated from exact Electron 43.1.0 to exact Electron 44.4.5 (Chromium
@@ -10,9 +16,6 @@ Last Updated: 2026-09-24
 - Refreshed the locked build tooling to clear every `npm audit` finding,
   including the `brace-expansion`, `tar`, `undici`, and `js-yaml` advisories
   that had begun failing the required CI audit step on `master`.
-- Added a manual-only Release workflow that builds the AppImage from the
-  draft release's target commit, attaches it with `SHA256SUMS`, and publishes
-  the draft. CI validation builds remain non-publishing.
 - Supersedes the unmerged Copilot Electron 44.3.0 draft.
 
 ## v1.2.0 — 2026-07-23
