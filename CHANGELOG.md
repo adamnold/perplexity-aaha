@@ -10,6 +10,9 @@ Last Updated: 2026-09-24
 - Refreshed the locked build tooling to clear every `npm audit` finding,
   including the `brace-expansion`, `tar`, `undici`, and `js-yaml` advisories
   that had begun failing the required CI audit step on `master`.
+- Added a manual-only Release workflow that builds the AppImage from the
+  draft release's target commit, attaches it with `SHA256SUMS`, and publishes
+  the draft. CI validation builds remain non-publishing.
 - Supersedes the unmerged Copilot Electron 44.3.0 draft.
 
 ## v1.2.0 — 2026-07-23

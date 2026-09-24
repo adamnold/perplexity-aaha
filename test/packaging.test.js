@@ -22,3 +22,12 @@ test("CI uses the guarded build path and current action runtimes", () => {
   assert.match(workflow, /actions\/setup-node@v7/);
   assert.match(workflow, /^\s*- run: \.\/build\.sh$/m);
 });
+
+test("release workflow is manual-only and reuses the guarded build", () => {
+  const workflow = fs.readFileSync(path.join(sourceRoot, ".github", "workflows", "release.yml"), "utf8");
+  const trigger = workflow.slice(workflow.indexOf("\non:"), workflow.indexOf("\npermissions:"));
+  assert.match(trigger, /workflow_dispatch:/);
+  assert.doesNotMatch(trigger, /\b(push|pull_request|release|schedule):/);
+  assert.match(workflow, /^\s*- run: \.\/build\.sh$/m);
+  assert.match(workflow, /--draft=false/);
+});
