@@ -4,6 +4,9 @@ Last Updated: 2026-09-24
 
 ## Unreleased — 2026-09-24
 
+- Fixed stale AppImages being installed next to the new one: `build.sh` now
+  clears `dist/` before building, and both `build.sh` and `install.sh` require
+  exactly one AppImage.
 - Added a manual-only Release workflow that builds the AppImage from the
   draft release's target commit, attaches it with `SHA256SUMS`, and publishes
   the draft. CI validation builds remain non-publishing.
