@@ -31,3 +31,13 @@ test("release workflow is manual-only and reuses the guarded build", () => {
   assert.match(workflow, /^\s*- run: \.\/build\.sh$/m);
   assert.match(workflow, /--draft=false/);
 });
+
+test("builds start clean and install exactly one AppImage", () => {
+  const buildScript = fs.readFileSync(path.join(sourceRoot, "build.sh"), "utf8");
+  const installScript = fs.readFileSync(path.join(sourceRoot, "install.sh"), "utf8");
+  assert.ok(buildScript.indexOf("rm -rf dist") !== -1);
+  assert.ok(buildScript.indexOf("rm -rf dist") < buildScript.indexOf("npm run dist"));
+  assert.match(buildScript, /expected exactly one AppImage/);
+  assert.match(installScript, /expected exactly one AppImage/);
+  assert.doesNotMatch(installScript, /cp dist\/\*\.AppImage/);
+});
